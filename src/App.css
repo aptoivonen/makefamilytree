@@ -1,0 +1,12 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.flow-container {
+  flex-grow: 1;
+  border: 2px solid #4fc3f7;
+}
