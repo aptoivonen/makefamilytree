@@ -1,5 +1,11 @@
-import { useState } from "react";
-import { ReactFlow } from "components";
+import { useCallback } from "react";
+import ReactFlow, {
+  addEdge,
+  useEdgesState,
+  useNodesState,
+  MiniMap,
+  Controls,
+} from "react-flow-renderer";
 
 const initialNodes = [
   {
@@ -29,10 +35,29 @@ const initialEdges = [
 ];
 
 const TestFlow = () => {
-  const [nodes] = useState(initialNodes);
-  const [edges] = useState(initialEdges);
+  const [nodes, , onNodesChange] = useNodesState(initialNodes);
+  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
-  return <ReactFlow nodes={nodes} edges={edges} fitView />;
+  const onConnect = useCallback(
+    (connection) => {
+      setEdges((eds) => addEdge(connection, eds));
+    },
+    [setEdges]
+  );
+
+  return (
+    <ReactFlow
+      nodes={nodes}
+      edges={edges}
+      onNodesChange={onNodesChange}
+      onEdgesChange={onEdgesChange}
+      onConnect={onConnect}
+      fitView
+    >
+      <MiniMap />
+      <Controls />
+    </ReactFlow>
+  );
 };
 
 export default TestFlow;
