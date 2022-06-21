@@ -11,3 +11,7 @@
   color: #777;
   font-size: 12px;
 }
+
+.react-flow__handle-bottom {
+  background: red;
+}

@@ -1,14 +1,14 @@
 import "./App.css";
 // import { TestFlow } from "components";
-// import TextUpdaterFlow from "components/TextUpdaterFlow";
-import AddNewNodes from "components/AddNewNodes";
+import TextUpdaterFlow from "components/TextUpdaterFlow";
+// import AddNewNodes from "components/AddNewNodes";
 
 function App() {
   return (
     <div className="App">
       <h1>Family Tree</h1>
       <div className="flow-container">
-        <AddNewNodes />
+        <TextUpdaterFlow />
       </div>
     </div>
   );
