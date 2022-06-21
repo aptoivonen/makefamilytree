@@ -2,7 +2,6 @@ import { useCallback } from "react";
 import { Handle, Position } from "react-flow-renderer";
 import "./TextUpdaterNode.css";
 
-const leftHandleStyle = { left: 10 };
 const rightHandleStyle = { left: "calc(100% - 10px)" };
 
 const TextUpdaterNode = ({ data }) => {
@@ -17,12 +16,7 @@ const TextUpdaterNode = ({ data }) => {
         <label htmlFor="text">Text</label>
         <input type="text" id="text" name="text" onChange={onChange} />
       </div>
-      <Handle
-        type="source"
-        position={Position.Bottom}
-        id="a"
-        style={leftHandleStyle}
-      />
+      <Handle type="source" position={Position.Left} id="a" />
       <Handle type="source" position={Position.Bottom} id="b" />
       <Handle
         type="source"
