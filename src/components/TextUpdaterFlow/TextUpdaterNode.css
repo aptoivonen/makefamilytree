@@ -14,6 +14,11 @@
 
 .react-flow__node-textUpdater {
   border-radius: 10px;
+  border: 3px solid white;
+}
+
+.react-flow__node-textUpdater.selected {
+  border-color: goldenrod;
 }
 
 .react-flow__handle-bottom {
