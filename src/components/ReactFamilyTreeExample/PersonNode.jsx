@@ -3,7 +3,11 @@ import styles from "./PersonNode.module.css";
 
 const PersonNode = ({ node, isRoot, onClick }) => {
   return (
-    <div className={styles.root} title={node.id}>
+    <div
+      className={styles.root}
+      title={node.id}
+      onClick={() => onClick(node.id)}
+    >
       <div
         className={classNames(
           styles.inner,
@@ -13,10 +17,7 @@ const PersonNode = ({ node, isRoot, onClick }) => {
       >
         {node.name ? node.name : node.id}
         {node.hasSubTree && (
-          <div
-            className={classNames(styles.sub, styles[node.gender])}
-            onClick={() => onClick(node.id)}
-          />
+          <div className={classNames(styles.sub, styles[node.gender])} />
         )}
       </div>
     </div>
