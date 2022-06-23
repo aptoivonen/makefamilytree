@@ -15,6 +15,7 @@ const fullNodeHeight = PERSON_NODE_HEIGHT + PERSON_NODE_VERTICAL_GAP;
 
 const ReactFamilyTreeExample = () => {
   const [rootId, setRootId] = useState(nodes[0].id);
+  const [selectedPersonId, setSelectedPersonId] = useState(nodes[0].id);
 
   return (
     <PinchZoomPan min={0.5} max={2.5} captureWheel className={styles.wrapper}>
@@ -41,7 +42,8 @@ const ReactFamilyTreeExample = () => {
           >
             <PersonNode
               node={node}
-              onClick={setRootId}
+              onSelect={setSelectedPersonId}
+              onChangeTreeView={setRootId}
               isRoot={node.id === rootId}
             />
           </div>
