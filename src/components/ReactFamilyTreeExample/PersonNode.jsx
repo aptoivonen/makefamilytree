@@ -11,7 +11,7 @@ const PersonNode = ({ node, isRoot, onClick, style }) => {
           isRoot && styles.isRoot
         )}
       >
-        {node.id}
+        {node.name ? node.name : node.id}
         {node.hasSubTree && (
           <div
             className={classNames(styles.sub, styles[node.gender])}
