@@ -1,9 +1,9 @@
 import classNames from "classnames";
 import styles from "./PersonNode.module.css";
 
-const PersonNode = ({ node, isRoot, onClick, style }) => {
+const PersonNode = ({ node, isRoot, onClick }) => {
   return (
-    <div className={styles.root} style={style} title={node.id}>
+    <div className={styles.root} title={node.id}>
       <div
         className={classNames(
           styles.inner,

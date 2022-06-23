@@ -19,19 +19,24 @@ const ReactFamilyTreeExample = () => {
         width={personNodeWidthWithPadding}
         height={personNodeHeightWithPadding}
         renderNode={(node) => (
-          <PersonNode
+          <div
             key={node.id}
-            node={node}
-            onClick={setRootId}
-            isRoot={node.id === rootId}
             style={{
               width: personNodeWidthWithPadding,
               height: personNodeHeightWithPadding,
+              padding: "30px 15px",
+              position: "absolute",
               transform: `translate(${
                 node.left * (personNodeWidthWithPadding / 2)
               }px, ${node.top * (personNodeHeightWithPadding / 2)}px)`,
             }}
-          />
+          >
+            <PersonNode
+              node={node}
+              onClick={setRootId}
+              isRoot={node.id === rootId}
+            />
+          </div>
         )}
       />
     </PinchZoomPan>
