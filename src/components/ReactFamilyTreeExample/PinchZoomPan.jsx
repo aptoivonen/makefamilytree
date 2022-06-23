@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import classNames from "classnames";
+import PropTypes from "prop-types";
 import { create } from "pinch-zoom-pan";
 import css from "./PinchZoomPan.module.css";
 
@@ -26,6 +27,15 @@ const PinchZoomPan = ({
       </div>
     </div>
   );
+};
+
+PinchZoomPan.propTypes = {
+  min: PropTypes.number,
+  max: PropTypes.number,
+  captureWheel: PropTypes.bool,
+  className: PropTypes.string,
+  style: PropTypes.object,
+  children: PropTypes.element.isRequired,
 };
 
 export default PinchZoomPan;
