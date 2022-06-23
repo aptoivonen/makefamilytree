@@ -1,6 +1,7 @@
 const nodes = [
   {
     id: "HkqEDLvxE",
+    name: "Mike Jackson",
     gender: "male",
     parents: [
       {
